@@ -24,5 +24,38 @@ class UsersModel(db.Model):
     @app.route('/', methods=['GET'])
     def users1():
         return  render_template('index.html')
+    @app.route('/logn', methods=['GET'])
+    def users2():
+        return  render_template('logn.html')
+    @app.route('/sgnup', methods=['GET'])
+    def users3():
+        return  render_template('sgnup.html')
+    @app.route('/home', methods=['GET'])
+    def users4():
+        return  render_template('home.html')
+    @app.route('/product', methods=['GET'])
+    def users5():
+        return  render_template('product.html')
+    @app.route('/users', methods=['POST', 'GET'])
+    def handle_users():
+        if request.method =='POST':
+            if request.form:
+                data = request.form
+                new_user = UsersModel(name=data[''], password=data['phone'])
+                db.session.add(new_user)
+                db.session.commit()
+                return {"message": f"user {new_user.name} has been created successfully."}
+            else:
+                return {"error": "No data passed in form."}
+
+        elif request.method == 'GET':
+            users = UsersModel.query.all()
+            results = [
+                {
+                    "name": user.name
+                } for user in users]
+
+            return {"count": len(results), "users": results}
+   
 if __name__ == "__main__":
     app.run()
