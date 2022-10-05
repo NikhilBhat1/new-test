@@ -173,21 +173,12 @@ ol {
 
 .site-btn {
 	font-size: 14px;
-<<<<<<< HEAD
-	color: #ffffff;
+	color: black;
 	font-weight: 800;
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 13px 30px 12px;
-	background: #7fad39;
-=======
-	color: black;
-	font-weight: 800;
-	border-radius: 10px;
-	display: inline-block;
-	padding: 13px 30px 12px;
 	background: limegreen;
->>>>>>> 989b383e5e665935b46292afcc1aa20318e49a4b
 	border: none;
 }
 
@@ -258,13 +249,9 @@ ol {
 /*---------------------
   Header
 -----------------------*/
-<<<<<<< HEAD
-
-=======
 *{
 	font-family: 'Times New Roman', Times, serif;
 }
->>>>>>> 989b383e5e665935b46292afcc1aa20318e49a4b
 .header__top {
 	background: #f5f5f5;
 }
@@ -575,17 +562,6 @@ ol {
   Hero
 -----------------------*/
 
-<<<<<<< HEAD
-.hero {
-	padding-bottom: 50px;
-}
-
-.hero.hero-normal {
-	padding-bottom: 30px;
-}
-
-.hero.hero-normal .hero__categories {
-=======
 .heo {
 	padding-bottom: 50px;
 }
@@ -595,7 +571,6 @@ ol {
 }
 
 .heo.heo-normal .hero__categories {
->>>>>>> 989b383e5e665935b46292afcc1aa20318e49a4b
 	position: relative;
 }
 
@@ -663,12 +638,9 @@ ol {
 .hero__search {
 	overflow: hidden;
 	margin-bottom: 30px;
-<<<<<<< HEAD
-=======
 	padding-top: 90px;
 	margin: auto;
 	width: 50%;
->>>>>>> 989b383e5e665935b46292afcc1aa20318e49a4b
 }
 
 .hero__search__form {
@@ -733,11 +705,7 @@ ol {
 
 .hero__search__phone__icon {
 	font-size: 18px;
-<<<<<<< HEAD
-	color: #7fad39;
-=======
 	color: limegreen;
->>>>>>> 989b383e5e665935b46292afcc1aa20318e49a4b
 	height: 50px;
 	width: 50px;
 	background: #f5f5f5;
@@ -3502,9 +3470,6 @@ ol {
 	.blog__details__hero__text h2 {
 		font-size: 24px;
 	}
-<<<<<<< HEAD
-}
-=======
 }
 .add_to_cart{
 	background-color: limegreen;
@@ -3512,4 +3477,3 @@ ol {
 	padding: 5px 10px 5px 10px;
 	border-radius: 5px;
 }
->>>>>>> 989b383e5e665935b46292afcc1aa20318e49a4b
