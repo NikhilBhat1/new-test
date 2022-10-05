@@ -50,6 +50,9 @@ class UsersModel(db.Model):
     @app.route('/cart',methods=['GET'])
     def users6():
         return render_template('cart.html')
+    @app.route('/health', methods=['GET'])
+    def users7():
+        return  render_template('health.html')
     @app.route('/users', methods=['POST', 'GET'])
     def handle_users():
         if request.method == 'POST':
