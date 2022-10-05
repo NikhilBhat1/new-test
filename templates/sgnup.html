@@ -85,7 +85,7 @@
             
             <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
               
-              <form action="forms/login.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+              <form action="/users" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100" >
                 <div class="row gy-4">
                   <div class="col-lg-4 col-md-6">
                     <input type="text" name="name" class="form-control" id="name" placeholder=" Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
@@ -114,7 +114,7 @@
                    
                 </div>
                 <div class="form-group mt-3">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Address(Along with the pincode)"></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Address(Along with the pincode)"></textarea>
                   <div class="validate"></div>
                 </div>
                 <div class="mb-3">
@@ -129,6 +129,13 @@
           </div>
   
         </div>
+<script>
+                        function show(){
+                            
+                                window.location.href = '/product'
+                    </script>
+
+
       </section><!--
         
 

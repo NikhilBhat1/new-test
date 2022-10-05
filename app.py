@@ -15,9 +15,20 @@ class UsersModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
     password = db.Column(db.String())
+    email=db.Column(db.String())
+    age=db.Column(db.String())
+    gender=db.Column(db.String())
+    mobile=db.Column(db.String())
+    address=db.Column(db.String())
 
-    def __init__(self, name):
+    def __init__(self, name, password,email,age,gender,mobile,address):
         self.name = name
+        self.password = password
+        self.email=email
+        self.age=age
+        self.gender=gender
+        self.mobile=mobile
+        self.address=address
     
     def __repr__(self):
         return f"<User {self.name}>"
@@ -36,12 +47,15 @@ class UsersModel(db.Model):
     @app.route('/product', methods=['GET'])
     def users5():
         return  render_template('product.html')
+    @app.route('/cart',methods=['GET'])
+    def users6():
+        return render_template('cart.html')
     @app.route('/users', methods=['POST', 'GET'])
     def handle_users():
-        if request.method =='POST':
+        if request.method == 'POST':
             if request.form:
                 data = request.form
-                new_user = UsersModel(name=data[''], password=data['phone'])
+                new_user = UsersModel(name=data['name'], password=data['phone'],email=data['email'],age=data['date'],gender=data['time'],mobile=data['people'],address=data['message'])
                 db.session.add(new_user)
                 db.session.commit()
                 return {"message": f"user {new_user.name} has been created successfully."}
@@ -56,6 +70,6 @@ class UsersModel(db.Model):
                 } for user in users]
 
             return {"count": len(results), "users": results}
-   
+    
 if __name__ == "__main__":
     app.run()
