@@ -10,6 +10,9 @@
 # Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --------------------------------------------------------------*/
 /* Fonts */
+a:hover{
+  color: white;
+}
 .discount
 {
   width: 1300px;
@@ -312,7 +315,7 @@ section {
   color: black;
   background: whitesmoke;
   padding: 8px 20px;
-  margin-left: 30px;
+  margin-left: 10px;
   border-radius: 50px;
   transition: 0.3s;
 }
@@ -320,7 +323,7 @@ section {
 .header .btn-book-a-table:hover,
 .header .btn-book-a-table:focus:hover {
   color: #fff;
-  background: green;
+  background: black;
 }
 
 section {
@@ -1752,4 +1755,9 @@ section {
 }
 .search{
   padding-top: 100px;
+}
+.nav_contents{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

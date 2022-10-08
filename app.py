@@ -1,6 +1,10 @@
+
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask import Flask, request, render_template
+import pandas as pd
+
+dataset = pd.read_csv('nutrition.csv')
 
 app = Flask(__name__)
 
@@ -53,6 +57,19 @@ class UsersModel(db.Model):
     @app.route('/health', methods=['GET'])
     def users7():
         return  render_template('health.html')
+
+    @app.route("/result" ,methods=['POST','GET'])
+    def result():
+        content=request.form.get("content")
+        
+        if content == 'Low fat products':
+            dataset['fat_100g'].isin(range(2))
+            low_fat=dataset.loc[dataset['fat_100g']==True]
+            fat=low_fat['product_name']
+            
+
+        return render_template("health.html",content = fat)
+
     @app.route('/users', methods=['POST', 'GET'])
     def handle_users():
         if request.method == 'POST':
@@ -73,6 +90,12 @@ class UsersModel(db.Model):
                 } for user in users]
 
             return {"count": len(results), "users": results}
+
+#diet display
+
+    
+
+
     
 if __name__ == "__main__":
     app.run()

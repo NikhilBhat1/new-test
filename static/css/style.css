@@ -652,7 +652,7 @@ ol {
 }
 
 .hero__search__form form .hero__search__categories {
-	width: 30%;
+	width: 50%;
 	float: left;
 	font-size: 16px;
 	color: #1c1c1c;
@@ -3649,4 +3649,11 @@ Sidebar
 .sidebar__item__size label input {
 	position: absolute;
 	visibility: hidden;
+}
+.drop{
+	width:150px;
+	height:30px;
+}
+.label{
+	font-size: 20px;
 }

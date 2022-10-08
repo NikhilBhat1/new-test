@@ -33,12 +33,7 @@
     color: limegreen;
   }
 </style>
-  <!-- =======================================================
-  * Template Name: Yummy - v1.0.0
-  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -53,15 +48,12 @@
         <h1>GroMart<span></span></h1>
       </a>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-                    <li><a href="/cart">Cart</a></li>
+      
           
           
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
-
+      <a href="#contact">Home</a>
+      <a href="/cart">Cart</a>
+      <a href="/cart">Offers</a>
       <a class="btn-book-a-table" href="#book-a-table">Grostars : </a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -71,15 +63,32 @@
   </header>
 
   <body>
-    <div class="hero__search" style="margin: auto; width: 50%; padding-top: 130px;" >
-        <div class="hero__search__form">
-            <form action="forms/health.php">
-                
-                <input name="status" type="text" placeholder="What do you need?">
-                <button type="submit" class="site-btn">Search</button>
+    <section id="why-us" class="why-us section-bg" style="padding-top: 20px;">
+      <div class="hero__search" style="margin: auto; width: 50%;" >
+            <form action="/result" method="POST" >
+              <label class="label" for="content">What would you like to have ?</label>
+              <select style="color:limegreen;" class="drop" id="content" name="content">
+                <option value="Low fat products">Low fat products</option>
+                <option value="Low sugar products">Low sugar products</option>
+                <option value="Protein rich products">Protein rich products</option>
+                <option value="Low salt products">Low salt products</option>
+                <option value="Energy rich products">Energy rich products</option>
+                <option value="Low cabohydrates products">Low cabohydrates products</option>
+              </select>
+              <button type="submit">Submit</button>
+          
+              <centre>
+                {% if content %}
+                <h3 style="padding-top:50px;">{{content}}</h3>
+                {% endif %}
+              </centre>
+            
             </form>
         </div>
         </div>
+        </section>
+        </body>
+        
         <!--section class="product spad">
           <div class="container">
               <div class="row">
