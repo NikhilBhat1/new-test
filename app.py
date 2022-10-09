@@ -7,6 +7,7 @@ import pickle
 import numpy as np
 
 dataset = pd.read_csv('nutrition.csv')
+df=pd.read_csv('search.csv')
 
 app = Flask(__name__)
 
@@ -98,7 +99,7 @@ class UsersModel(db.Model):
             
          
         elif content == "Energy rich products":
-            dataset['energy_100g'].isin(range(1000))
+            dataset['energy_100g'].isin(range(2000,2200))
             energy_boos=dataset.loc[dataset['energy_100g']==True]
             cont=energy_boos.product_name.values.tolist()
         
@@ -133,9 +134,9 @@ popular_df = pickle.load(open('popular.pkl','rb'))
 ##books = pickle.load(open('books.pkl','rb'))
 ##similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
 
-
 @app.route('/popularity')
 def popularity():
+
     return render_template('popularity.html',
                            Item = list(popular_df['Title'].values),
                            des=list(popular_df['category'].values),
@@ -143,6 +144,7 @@ def popularity():
                            ##votes=list(popular_df['num_ratings'].values),
                            rating=list(popular_df['avg_ratings'].values)
                            )
+
 popular_df = pickle.load(open('popular.pkl','rb'))
 pt = pickle.load(open('pt.pkl','rb'))
 items = pickle.load(open('item.pkl','rb'))
@@ -170,6 +172,27 @@ def recommend():
 
     return render_template('recommend.html',data=data)
 
-    
+@app.route("/search" ,methods=['POST','GET'])
+def search():
+    search=request.form.get("search")
+    product=None
+    price=None
+    if search=='rice':
+        product=df['Product'][0]
+        price=df['price'][0]
+        img=df['image'][0]
+
+    elif search=='nutella':
+        product=df['Product'][1]
+        price=df['price'][1]
+        img=df['image'][1]
+
+
+        
+    return render_template('home.html',search=product,price=price,img=img)
+
+
+
+
 if __name__ == "__main__":
     app.run()

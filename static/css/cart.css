@@ -264,3 +264,6 @@ border-radius: 10px;
 padding: 5px 15px 5px 15px;
 border-color: limegreen;
 }
+a:hover{
+	color: white;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book Recommender System</title>
+    <title>Top Products</title>
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
@@ -49,6 +49,7 @@
 
   <!-- Template Main CSS File -->
   <link href="static/css/main.css" rel="stylesheet">
+  <link href="static/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Yummy - v1.0.0
@@ -74,32 +75,7 @@
       <nav id="navbar" class="navbar">
         
       </nav><!-- .navbar -->
-      <!--ul class="nav_contents">
-       
-        <li><a href="">About</a></li>
-        <!li><a href="#menu">Menu</a></li-->
-        <!--li><a href="#events">Events</a></li-->
-        <!--i><a href="#chefs">Chefs</a></li>
-        <li><a href="">Blogs</a></li>
-        <!li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-          <ul>
-            <li><a href="#">Drop Down 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-              <ul>
-                <li><a href="#">Deep Drop Down 1</a></li>
-                <li><a href="#">Deep Drop Down 2</a></li>
-                <li><a href="#">Deep Drop Down 3</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Drop Down 2</a></li>
-            <li><a href="#">Drop Down 3</a></li>
-            <li><a href="#">Drop Down 4</a></li>
-          </ul>
-        </li>
-        <li><a href="">Contact</a></li>
-      </ul-->
+      
       <a href="">Blogs</a>
       <a href="">About Us</a>
       <a href="">Contact</a>
@@ -112,22 +88,34 @@
     </div>
   </header>
 
-
+  <section id="why-us" class="why-us section-bg" style="padding-top: 10px;">
+    <div class="hero__search" style="margin: auto; width: 50%;" >
+      <div class="hero__search__form">
+          <form action="#">
+              
+              <input type="text" placeholder="What do you need?">
+              <button type="submit" class="site-btn">Search</button>
+          </form>
+      </div>
+      </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-white" style="font-size:50px; padding-top: 100px; color: black;">Top Products Today</h1>
+                <h1 class="text-white" style="font-size:50px; padding-top: 10px; color: black;">Top Products Today</h1>
             </div>
-
+            <h3 style="text-align: center; color:black; font-family: 'Times New Roman', Times, serif;">Top Rated Products</h3>
             {% for i in range(Item|length) %}
                 <div class="col-md-3" style="margin-top:50px; color: black;">
                     <div class="card">
+                      
                         <div class="card-body">
-                            <img class="card-img-top" src="https://{{ image[i] }}">
+                            <img class="card-img-top" src="{{ image[i] }}.jpg">
                             <p class="text-black">{{ Item[i] }}</p>
-                            <h4 class="text-black">{{ des[i] }}</h4>
+                            <h6 class="text-black">{{ des[i] }}</h6>
                            
-                            <h4 class="text-black">Rating - {{ rating[i] }}</h4>
+                            <h6 class="text-black">Rating - {{ rating[i] }}</h6>
+                            <button type="button" class="add_to_cart" style="padding-top: 5px;">Add to Cart</button>
+                            <i class="bi bi-cart4"></i>
                         </div>
                     </div>
                 </div>

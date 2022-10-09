@@ -94,6 +94,7 @@ textarea:focus {
 	outline: none;
 }
 
+
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -3657,3 +3658,10 @@ Sidebar
 .label{
 	font-size: 20px;
 }
+.product:h6{
+font-family: 'Times New Roman', Times, serif;
+}
+
+.product:h7{
+	font-family: 'Times New Roman', Times, serif;
+	}
