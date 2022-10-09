@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask import Flask, request, render_template
 import pandas as pd
+import pickle
+import numpy as np
 
 dataset = pd.read_csv('nutrition.csv')
 
@@ -62,14 +64,47 @@ class UsersModel(db.Model):
     def result():
         content=request.form.get("content")
         
+        cont=None
+        
         if content == 'Low fat products':
-            dataset['fat_100g'].isin(range(2))
+            dataset['fat_100g'].isin(range(0))
             low_fat=dataset.loc[dataset['fat_100g']==True]
-            fat=low_fat['product_name']
+            cont=low_fat.product_name.values.tolist()
+        
+
             
+        elif content == "Low sugar products":
+            dataset['sugars_100g'].isin(range(0))
+            low_sugar=dataset.loc[dataset['sugars_100g']==True]
+            cont=low_sugar.product_name.values.tolist()
+            
+        elif content == "Low cabohydrates products":
+            dataset['carbohydrates_100g'].isin(range(2000))
+            low_carb=dataset.loc[dataset['carbohydrates_100g']==True]
+            cont=low_carb.product_name.values.tolist()
+            
+        
+        elif content == "Protein rich products":
+            dataset['proteins_100g'].isin(range(90,100))
+            protein_rich=dataset.loc[dataset['proteins_100g']==True]
+            cont=protein_rich.product_name.values.tolist()
+           
+            
+        elif content == "Low salt products":
+            dataset['salt_100g'].isin(range(0,1))
+            low_salt=dataset.loc[dataset['salt_100g']==True]
+            
+            cont=low_salt.product_name.values.tolist()
+            
+         
+        elif content == "Energy rich products":
+            dataset['energy_100g'].isin(range(1000))
+            energy_boos=dataset.loc[dataset['energy_100g']==True]
+            cont=energy_boos.product_name.values.tolist()
+        
+        return render_template("health.html",content = cont)
 
-        return render_template("health.html",content = fat)
-
+    
     @app.route('/users', methods=['POST', 'GET'])
     def handle_users():
         if request.method == 'POST':
@@ -93,7 +128,21 @@ class UsersModel(db.Model):
 
 #diet display
 
-    
+popular_df = pickle.load(open('popular.pkl','rb'))
+##pt = pickle.load(open('pt.pkl','rb'))
+##books = pickle.load(open('books.pkl','rb'))
+##similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
+
+
+@app.route('/popularity')
+def popularity():
+    return render_template('popularity.html',
+                           Item = list(popular_df['Title'].values),
+                           des=list(popular_df['category'].values),
+                           image=list(popular_df['image'].values),
+                           ##votes=list(popular_df['num_ratings'].values),
+                           rating=list(popular_df['avg_ratings'].values)
+                           )
 
 
     
