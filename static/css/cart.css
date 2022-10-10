@@ -110,9 +110,9 @@ h3{
 
 	padding: 10px 25px;
 
-	background-color: green;
+	background-color: limegreen;
 
-	color: white;
+	color: black;
 
 	cursor: pointer;
 
@@ -126,7 +126,7 @@ h3{
 
 	color: green;
 
-	font-weight: 300;
+	font-weight: 200;
 
 	border: 1px solid green;
 
@@ -188,7 +188,7 @@ h3{
 
 	background-color: limegreen;
 
-	color: white;
+	color: black;
 
 	text-decoration: none;
 

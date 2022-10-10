@@ -176,11 +176,12 @@ ol {
 	font-size: 14px;
 	color: black;
 	font-weight: 800;
-	text-transform: uppercase;
+	
 	display: inline-block;
 	padding: 13px 30px 12px;
 	background: limegreen;
 	border: none;
+	border-radius: 5px;
 }
 
 /* Preloder */
