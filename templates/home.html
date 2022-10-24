@@ -57,7 +57,7 @@
       <a href="/cart">Cart</a>
       <a href="/product">Offers</a>
       <a href="/index">Logout</a>
-      <a class="btn-book-a-table" href="#book-a-table">Grostars : </a>
+      <a class="btn-book-a-table" href="/grostar">Grostars : </a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       
@@ -75,18 +75,39 @@
               <input type="text" name="search" id="search">
               <button type="submit" class="site-btn">Search</button>
           </div>
-              <centre>
-                {% if search %}
-                <img src="{{img}}" width="100px;" height="130px" style="padding-top:20px;">
-                <h6> {{ search }}</h6>
-                <h6>{{ price }}</h6>
-                
 
-                {% endif %}
-              </centre>
+              
+                {% for i in range(search|length) %}
+
+                    <div class="col-md-4" style="padding-top:100px; color: black;">
+                      <div class="card">
+                        
+                          <div class="card-body">
+                            
+                              <img class="card-img-top" src="{{ img[i] }}">
+                              <p class="text-black">{{ search[i] }}</p>
+                              <h6 class="text-black">{{ price[i] }}</h6>
+                             
+                              
+                              <button type="button" class="add_to_cart" style="padding-top: 5px;">Add to Cart</button>
+                              <i class="bi bi-cart4"></i>
+                            
+                          </div>
+                      </div>
+                  </div>
+
+      
+                
+                
+                
+            {% endfor %}
+              
+    
           </form>
       </div>
       </div>
+      
+      
     <section class="heo" >
       <div class="container">
           <div class="row">
@@ -160,7 +181,34 @@
   </div>
   </div>
   </section>
-  <div style="padding-top:100px; padding-left: 10px;">
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-white" style="font-size:50px; padding-top: 10px; color: black;">Top Products Today</h1>
+        </div>
+        <h3 style="text-align: center; color:black; font-family: 'Times New Roman', Times, serif;">Top Rated Products</h3>
+        {% for i in range(product|length) %}
+            <div class="col-md-3" style="margin-top:50px; color: black;">
+                <div class="card">
+                  
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{ image[i] }}">
+                        <p class="text-black">{{ product[i] }}</p>
+                        <h6 class="text-black">{{ price[i] }}</h6>
+                       
+                        
+                        <button type="button" class="add_to_cart" style="padding-top: 5px;">Add to Cart</button>
+                        <i class="bi bi-cart4"></i>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+  <!--div style="padding-top:100px; padding-left: 10px;">
     <div class="row">
       <div class="col-lg-2 text-center"  >
           <div class="card border-0 bg-light mb-2">
