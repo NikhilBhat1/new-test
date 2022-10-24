@@ -1,4 +1,4 @@
-
+#from crypt import methods
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask import Flask, request, render_template
@@ -48,7 +48,7 @@ class UsersModel(db.Model):
     @app.route('/sgnup', methods=['GET'])
     def users3():
         return  render_template('sgnup.html')
-    @app.route('/home', methods=['GET'])
+    @app.route('/home', methods=['GET'],)
     def users4():
         return  render_template('home.html')
     @app.route('/product', methods=['GET'])
@@ -60,6 +60,11 @@ class UsersModel(db.Model):
     @app.route('/health', methods=['GET'])
     def users7():
         return  render_template('health.html')
+    @app.route('/grostar',methods=['GET'])
+    def users8():
+        return  render_template('grostar.html')
+    
+
 
     @app.route("/result" ,methods=['POST','GET'])
     def result():
@@ -175,21 +180,21 @@ def recommend():
 @app.route("/search" ,methods=['POST','GET'])
 def search():
     search=request.form.get("search")
-    product=None
-    price=None
-    if search=='rice':
-        product=df['Product'][0]
-        price=df['price'][0]
-        img=df['image'][0]
-
-    elif search=='nutella':
-        product=df['Product'][1]
-        price=df['price'][1]
-        img=df['image'][1]
-
-
+    
+    if search.lower()=='rice':
+        rice=df[df['Product'].str.contains("Rice")]
         
-    return render_template('home.html',search=product,price=price,img=img)
+
+
+    return render_template('home.html',
+                           search = list(rice['Product'].values),
+                           price=list(rice['price'].values),
+                           img=list(rice['image'].values),
+        
+                           )  
+
+                           
+                           
 
 
 

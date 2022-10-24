@@ -65,16 +65,38 @@
       
     </div>
   </header><!-- End Header -->
-  <div style="padding-top:100px; padding-left: 10px;">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-white" style="font-size:50px; padding-top: 10px; color: black;">Top Products Today</h1>
+        </div>
+        <h3 style="text-align: center; color:black; font-family: 'Times New Roman', Times, serif;">Top Rated Products</h3>
+        {% for i in range(Item|length) %}
+            <div class="col-md-3" style="margin-top:50px; color: black;">
+                <div class="card">
+                  
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{ image[i] }}">
+                        <p class="text-black">{{ Item[i] }}</p>
+                        <h6 class="text-black">{{ des[i] }}</h6>
+                       
+                        <h6 class="text-black">Rating - {{ rating[i] }}</h6>
+                        <button type="button" class="add_to_cart" style="padding-top: 5px;">Add to Cart</button>
+                        <i class="bi bi-cart4"></i>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+  <!--div style="padding-top:100px; padding-left: 10px;">
     <div class="row">
       <div class="col-lg-2 text-center"  >
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
-                  <img src="static/img/rice.jpg" class="img-fluids" alt="">
-              </div>
-          </div>
-          <h7>Basmati Rice(5Kg)</h7>
-          <p>Rs.700</p>
+                 
           <button type="button" class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>

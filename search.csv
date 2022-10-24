@@ -1,5 +1,8 @@
 Product,price,image
-Basmati Rice(5Kg),Rs.700,static/img/rice.jpg
+Basmati Rice(5Kg),Rs.700,static/img/basmati.jpg
 Nutella(100gm),Rs.190,static/img/nutella.jpg
 Quaker Oats(400gm),Rs.100,static/img/oats.jpg
 Dark Fantasy(300gm),Rs.300,static/img/darkfantasy.jpg
+Brown Rice(1Kg),Rs.75,static/img/brown.webp
+Jeera Rice(5Kg),Rs.1050,static/img/jeera.webp
+Matta Rice(10Kg),Rs.840,static/img/matta.webp
