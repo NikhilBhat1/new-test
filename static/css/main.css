@@ -10,7 +10,9 @@
 # Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --------------------------------------------------------------*/
 /* Fonts */
-
+a:hover{
+  color: white;
+}
 .discount
 {
   width: 1300px;
@@ -43,18 +45,15 @@ body {
   color: var(--color-default);
 }
 
-a
- {
+a {
   color: black;
   text-decoration: none;
-  font-size: 15px;
   
 }
 
 a:hover {
-  color:white;
+  color:limegreen;
   text-decoration: none;
-  
 }
 
 h1,
@@ -376,7 +375,7 @@ section {
 
   .navbar a i,
   .navbar a:focus i {
-    font-size: 22px;
+    font-size: 12px;
     line-height: 0;
     margin-left: 5px;
   }

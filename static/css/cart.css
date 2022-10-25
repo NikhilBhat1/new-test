@@ -110,9 +110,9 @@ h3{
 
 	padding: 10px 25px;
 
-	background-color: limegreen;
+	background-color: green;
 
-	color: black;
+	color: white;
 
 	cursor: pointer;
 
@@ -126,7 +126,7 @@ h3{
 
 	color: green;
 
-	font-weight: 200;
+	font-weight: 300;
 
 	border: 1px solid green;
 
@@ -188,7 +188,7 @@ h3{
 
 	background-color: limegreen;
 
-	color: black;
+	color: white;
 
 	text-decoration: none;
 
@@ -263,7 +263,4 @@ background-color: limegreen;
 border-radius: 10px;
 padding: 5px 15px 5px 15px;
 border-color: limegreen;
-}
-a:hover{
-	color: white;
 }

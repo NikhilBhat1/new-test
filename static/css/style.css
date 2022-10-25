@@ -94,7 +94,6 @@ textarea:focus {
 	outline: none;
 }
 
-
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -176,12 +175,11 @@ ol {
 	font-size: 14px;
 	color: black;
 	font-weight: 800;
-	
+	text-transform: uppercase;
 	display: inline-block;
 	padding: 13px 30px 12px;
 	background: limegreen;
 	border: none;
-	border-radius: 5px;
 }
 
 /* Preloder */
@@ -3659,10 +3657,3 @@ Sidebar
 .label{
 	font-size: 20px;
 }
-.product:h6{
-font-family: 'Times New Roman', Times, serif;
-}
-
-.product:h7{
-	font-family: 'Times New Roman', Times, serif;
-	}
